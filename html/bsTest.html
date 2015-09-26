@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>bsTest</title>
+	<link type="text/css" rel="stylesheet" href="../skin/css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="../skin/css/bsTest.css" />
+	<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../skin/js/bootstrap.js"></script>
+</head>
+<body>
+	<ul class="ulTest">
+		<li><a href="javascript:void(0);">内容1</a></li>
+		<li><a href="javascript:void(0);">内容2</a></li>
+		<li><a href="javascript:void(0);">内容3</a></li>
+		<li><a href="javascript:void(0);">内容4</a></li>
+		<li><a href="javascript:void(0);">内容5</a></li>
+	</ul>
+	<input type="text" name='user' />
+	<input type="password" name='pdw' />
+	
+	
+	<SCRIPT LANGUAGE="JavaScript">  
+    	var number = 10050;  
+        	var N = [  
+                    "零", "一", "二", "三", "四", "五", "六", "七", "八", "九"  
+                ];  
+        	function convertToChinese(num){  
+                var str = num.toString();  
+                var len = num.toString().length;  
+                var C_Num = [];  
+                for(var i = 0; i < len; i++){  
+                    C_Num.push(N[str.charAt(i)]);  
+                }  
+				C = ['十','百','千','万','十万'];
+				var C_Num_x = [];
+				C_Num.reverse();
+				for(var i = 0; i < C_Num.length; i++){alert(i);
+					C_Num_x.push(C_Num[i]);
+					if(i != C_Num.length-1){
+						C_Num_x.push(C[i]);
+					}
+				}
+				C_Num_x.reverse();
+				var zstr = C_Num_x.join('');
+				zstr = zstr.replace(/零.?/g, '零').replace(/零+/g, '零').replace(/^一十/g, '十').replace(/零$/g, '');
+                return zstr;
+            }  
+                  
+                var chinese = convertToChinese(number);  
+                alert(chinese);  
+      
+       
+      
+    </SCRIPT>  
+	
+	
+	
+	
+	
+</body>
+</html>

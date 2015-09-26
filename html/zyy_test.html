@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>zyy测试</title>
+<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	var test = function(){
+		this.p = 'p';
+		this.init = function(){
+			return 'init';
+		}
+	}
+	test.prototype = {
+			'ptest':function(){return 'testt';}
+	}
+	console.log(typeof(test));
+	console.log(test);
+	var testt = new test();
+	testt.prototype = {
+			'otest':function(){return 'otest';} 
+	}
+	testt.ss = {
+			'ss':function(){return 'ss';}
+	}
+	
+	console.log(testt.ss.ss());
+	
+	var tss = {}
+	tss.init = function(){
+		return 'tss';
+	}
+	
+	console.log(tss.init());
+	console.log(testt);
+</script>
+
+<script type="text/javascript" src="../skin/js/zyy_test.js"></script>
+
+<script type="text/javascript">
+	console.log(tests);
+	var tests_object = new tests();
+	console.log(tests_object.name);
+	
+	tests.ss = function(){
+		return 'ss';
+	}
+	console.log(tests);
+	console.log(tests_object.nmethod());
+	
+	//
+	var dates = new Date();
+	console.log('dates:'+dates);
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

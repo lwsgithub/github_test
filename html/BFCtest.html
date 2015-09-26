@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>BFC</title>
+	<style type="text/css">
+		ul,li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+		a:focus {
+			outline: none;
+		}
+		a:visited, a:active {
+			color: #333;
+		}
+		.container {
+			width: 295px;
+		}
+		.container ul {
+			overflow: hidden;
+		}
+		.container ul li {
+			float: left;
+			background-color: lightblue;
+		}
+		.container ul li:last-child {
+			overflow: hidden;
+		}
+	</style>
+	<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li><a href="javascript: void(0);">content0</a></li>
+			<li><a href="javascript: void(0);">content1</a></li>
+			<li><a href="javascript: void(0);">content2</a></li>
+			<li><a href="javascript: void(0);">content3</a></li>
+			<li><a href="javascript: void(0);">content4</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		console.log($('.container ul li').first());
+		$('.container ul li').scrollTop('10');
+		
+		console.log('test: '+ (function(){return 0,456}()));
+		
+		for(var a = b, b = 0; b < 5; b++){
+			console.log('a = ' + a +"\nb = " + b);
+		}
+		
+		
+		for(var num = 0, i = 0; i < 5; i++){
+			var nnum = 123;
+			i > 2 && (num = i);console.log("\nnum: " + num);
+		}
+		
+		console.log('ynum: ' + num + 'nnum: ' + nnum);
+		
+	</script>
+</body>
+</html>

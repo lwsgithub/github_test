@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			font-size: 12px;
+			margin: 0;
+		}
+		.container {
+			width: 80%;
+			height: 10vh;
+			margin: 0 auto;
+			border: thin solid #CCC;
+			overflow: auto;
+			position: relative;
+			z-index: 1;
+		}
+		.test {
+			width: 30%;
+			height: 3em;
+			background-color: #999;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul class="test" id="test">
+			<li><span>001</span></li>
+			<li><span>002</span></li>
+			<li><span>003</span></li>
+			<li><span>004</span></li>
+			<li><span>005</span></li>
+			<li><span>006</span></li>
+			<li><span>007</span></li>
+			<li><span>008</span></li>
+			<li><span>009</span></li>
+			<li><span>010</span></li>
+			<li><span>011</span></li>
+			<li><span>012</span></li>
+			<li><span>013</span></li>
+			<li><span>014</span></li>
+			<li><span>015</span></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var container = document.getElementById('container');
+		var test = document.getElementById('test');
+		document.onmousewheel = function(){
+			console.log(test.offsetTop);
+		}
+		;
+	</script>
+</body>
+</html>

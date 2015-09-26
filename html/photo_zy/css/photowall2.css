@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+.swiper-slide {
+	height: auto;
+}
+.my-simple-gallery {
+	position: static;
+}
+figure a {
+	display: block;
+}

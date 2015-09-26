@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script type="text/javascript">
+		function fun1(num){
+			return num+2;
+		}
+		var ss = fun1;
+		function fun1(num){
+			return num+3;
+		}
+		console.log('fun1:'+fun1(1)+"\n\r ss:"+ss(1));
+		//
+		var fun2 = function(num){
+			return num+5;
+		}
+		var ss2 = fun2;
+		fun2 = function(num){
+			return num+3;
+		}
+		console.log('fun2:'+fun2(1)+"\n\r ss:"+ss2(1));
+		
+		//
+		test = 15;
+		var funt = function(){
+			alert(test);
+		}
+		var test;
+		//alert(test);
+		funt();
+		
+		//立即执行的写法
+		(function(){
+			alert('num');
+		}());
+		
+		//递归
+		var dg = function(num){
+			if(num>10) return 0;
+			num++;
+			return (dg(num)+1)*2;
+		}
+		console.log(dg(0));
+		
+		//
+		function gf(){
+			alert('gf');
+		}
+		;(function(gf){
+			console.log(gf);
+			alert('wait!');
+			gf();
+		}());
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

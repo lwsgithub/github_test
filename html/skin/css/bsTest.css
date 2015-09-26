@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body {
+	font-size: 12px;
+}
+input[name=user]:before {
+	content: 'ss';
+}
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ulTest {
+	display: flex;
+	width: 12%;
+	height: 230px;
+	margin: 0 auto;
+	/*justify-content:space-between;*/
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.ulTest li {
+	margin: 0 1.5em;
+	white-space: nowrap;
+}

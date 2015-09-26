@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+}
+body, a, input {
+	font-size: 14px;
+}
+.product-detail {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	z-index: 1;
+}
+
+.swiper-container {
+	height: auto;
+}
+.swiper-wrapper {
+	margin-top: 14.643em;
+}
+img.swiper-slide {
+	width: 100%;
+}
+.yy {
+	display: none;
+	font-size: 3em;
+	width: 100vw;
+	height: 100vh;
+	line-height: 100vh;
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+	color: #FFF;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+}
+
+.bmenu {
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+}
+.bmenu nav {
+	border-top: 1px solid #CCC;
+	overflow: hidden;
+}
+.bmenu a {
+	display: block;
+	width: 33%;
+	height: 6em;
+	line-height: 6;
+	float: left;
+	margin: 0;
+	text-align: center;
+	overflow: hidden;
+}
+.bmenu a img {
+	display: inline;
+	vertical-align: middle;
+}
+
+
+

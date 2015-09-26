@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>瀑布流</title>
+	<link rel="stylesheet" href="../skin/css/bootstrap.css" />
+	<style type="text/css">
+		.masonry_wrapper {
+			width: 80%;
+			margin: 0 auto;
+		}
+		.thumbnail {
+			width: 30%;
+		}
+		.thumbnail img {
+			width: 100%;
+		}
+		#masonry_ghost {
+			width: 0;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="masonry_wrapper">
+		<div id="masonry"></div>
+		<div id="loading">正在载入中。。。</div>
+		<div id="masonry_ghost"></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../skin/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../skin/js/masonry.pkgd.js"></script>
+	<script type="text/javascript" src="../skin/js/imagesloaded.js"></script>
+	
+	<script type="text/javascript">
+
+		$(function() {
+			
+			$.ajax({
+				url: '/html/imgdata.php',
+				success: function(req){
+					var mg = $('#masonry_ghost');
+					//console.log(JSON.parse(req));
+					for(var key in JSON.parse(req)){
+						//console.log(JSON.parse(req)[key]);
+						mg.append('<div class="thumbnail"><img src="'+JSON.parse(req)[key]+'" /></div>');
+					}
+					
+					
+					var loadingNode = $('#loading');
+					var ghostNode = $('#masonry_ghost').find('.thumbnail'), i, ghostIndexArray = [];
+					var ghostCount = ghostNode.length;
+					for(i=0; i<ghostCount; i++){
+						ghostIndexArray[i] = i; 
+					}
+					ghostIndexArray.sort(function(a, b) {
+						if(Math.random() > 0.5) {
+							return a - b;
+						} else {
+							return b - a;
+						}
+					});
+					
+					var currentIndex = 0;
+					var masNode = $('#masonry');
+					
+					
+					function getNewItems() {
+						var newItemContainer = $('<div/>');
+						for(var i=0; i<9; i++) {
+							if(currentIndex < ghostCount) {
+								newItemContainer.append(ghostNode.get(ghostIndexArray[currentIndex]));
+								currentIndex++;
+							}
+						}
+						return newItemContainer.find('.thumbnail');
+					}
+					
+					function processNewItems(items) {
+						//items.each(function() {
+							//var $this = $(this);
+							//var imgsNode = $this.find('.imgs');
+							//var title = $.trim($this.find('.title').text().replace(/\n/ig, ''));
+							//var author = $.trim($this.find('.author').text().replace(/\n/ig, ''));
+							//title += '&nbsp;&nbsp;(' + author + ')';
+							//var lightboxName = 'lightbox_'; // + imgNames[0];
+							
+							//var imgNames = imgsNode.find('input[type=hidden]').val().split(',');
+							//imgsNode.append('<a href="./images/large/'+ imgNames[0] +'" data-lightbox="'+ lightboxName +'" title="'+ title +'"><img src="./images/'+ imgNames[0] +'" /></a>');
+							/*
+							$.each(imgNames, function(index, item) {
+								imgsNode.append('<a href="./images/large/'+ item +'" data-lightbox="'+ lightboxName +'" title="'+ title +'"><img src="./images/'+ item +'" /></a>');
+							});
+							*/
+						//});
+					}
+					
+					
+					var msnry;
+					
+					function initMasonry() {
+						var items = getNewItems().css('opacity', 0);
+						//processNewItems(items);
+						
+						masNode.append(items);
+						
+						msnry = new Masonry(masNode[0], {
+							itemSelector: '.thumbnail',
+							isFitWidth: true,
+							transitionDuration: '0.8s',
+							hiddenStyle: { opacity: 0 },
+							visibleStyle: { opacity: 1}
+						});
+						
+						loadingNode.hide();
+						items.animate({'opacity': 1}, 300);
+					}
+					
+					
+					function appendToMasonry() {
+						var items = getNewItems().css('opacity', 0);
+						
+						if(items.length) {
+							loadingNode.hide();
+							processNewItems(items);
+							
+							masNode.append(items);
+							
+							msnry.appended(items);
+							
+						}
+					}
+					
+					
+					initMasonry();
+					
+					$(window).scroll(function() {
+						/*
+						console.log('document:'+$(document).height());
+						console.log('window:'+$(window).height());
+						console.log('document-scrollTop:'+$(document).scrollTop());
+						*/
+						if($(document).height() - $(window).height() - $(document).scrollTop() < 10) {
+							
+							appendToMasonry();
+							
+						}
+						
+					});
+					
+					
+					
+					function randomColor() {
+						var rand = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+						for (; rand.length < 6;) {
+							rand = '0' + rand;
+						}
+						return '#' + rand;
+					}
+					
+					
+					
+				}
+			});
+		
+			
+			
+			
+		});
+
+	</script>
+	
+</body>
+</html>

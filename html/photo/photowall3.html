@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/swiper.min.css">
+	<link rel="stylesheet" href="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/photoswipe.css">
+	<link rel="stylesheet" href="css/photowall3.css" />
+	<title>相册</title>
+</head>
+<body>
+<script src="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/jquery-1.10.2.min.js"></script>
+<script>
+$(function(){
+	var pid = getUrlParam("pid");
+	$("#imgshow").attr("src","img/"+pid+".jpg");
+	
+	$("#left_return").click(function(){
+		window.location.href = 'photowall2.html';
+	});
+	$("#right_go").click(function(){
+		if(pid==1 || pid==7 || pid==12 || pid==18 || pid==23){
+			window.location.href = 'photowall4.html?pid='+pid;
+		}else{
+			alert('不是活动产品哦！');
+		}
+	});
+});
+function getUrlParam(name){  
+    //构造一个含有目标参数的正则表达式对象  
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+    //匹配目标参数  
+    var r = window.location.search.substr(1).match(reg);  
+    //返回参数值  
+    if (r!=null) return unescape(r[2]);  
+    return null;  
+} 
+</script>
+<div class="product-detail">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        	<img id="imgshow" src="img/1.jpg" alt="" class="swiper-slide" />
+        	<img id="imgshow" src="img/2.jpg" alt="" class="swiper-slide" />
+        	<img id="imgshow" src="img/3.jpg" alt="" class="swiper-slide" />
+        </div>
+    </div>
+    <div class="bmenu">
+        <nav>
+            <a href="javascript:void(0);"><img id="left_return" src="images/left.png" alt="" /></a>
+            <a href="javascript:void(0);"><img src="images/xin0.png" alt="" class="lightFlash1" /></a>
+            <a href="javascript:void(0);"><img id="right_go" src="images/right.png" alt="" class="lightFlash1" /></a>
+        </nav>
+    </div>
+    <div id="yy" class="yy">点击右下角有惊喜！</div>
+</div>
+<script src="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/swiper.jquery.min.js"></script>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+	    slidesPerView: 1,
+	    paginationClickable: true,
+	    spaceBetween: 1,
+	    loop: true
+	});
+	$(function(){
+		console.log(parseFloat($('.swiper-wrapper').height()));
+		var mh = (parseFloat($('.product-detail').height())-parseFloat($('.bmenu').height())-parseFloat($('.swiper-wrapper').height()))/2;
+		$('.swiper-wrapper').css('margin-top',mh+'px');
+		
+		//
+		$('#yy').height(parseFloat($('#yy').height())-parseFloat($('.bmenu').height()));
+		$('.swiper-slide').click(function(){
+			$('#yy').show();
+		});
+		$('#yy').click(function(){
+			$(this).hide();
+		});
+	});
+</script>
+</body>
+</html>

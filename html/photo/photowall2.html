@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no">
+<title>美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑</title>
+<link rel="stylesheet" type="text/css" href="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/swiper.min.css">
+<link rel="stylesheet" href="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/photoswipe.css">
+<link rel="stylesheet" href="css/photowall2.css" />
+</head>
+
+<body style="zoom: 1;">
+<div class="swiper-container swiper-container-vertical swiper-container-fade">
+  <div class="swiper-wrapper"> 
+    <!--第三屏-->
+    <div class="swiper-slide">
+      <div class="my-simple-gallery" id="fs"></div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/jquery-1.10.2.min.js"></script>
+<script src="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/swiper.jquery.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+	direction: 'vertical',
+	effect: 'fade',
+	parallax: true,
+	speed: 900,
+	moveStartThreshold: 500,
+	onlyExternal: true,
+	height: 2160
+});
+$(function() {
+	var hidd = "";
+	var ge = "";
+	for (var i = 1; i < 29; i++) {
+		hidd += '<input type="hidden" data-type="0" name=' + i + ' >';
+	}
+	$("body").append(hidd);
+	setTimeout(function() {
+		for (var j = 1; j < 29; j++) {
+			ge += '<figure><a class="imgurl" href="photowall3.html?&gid=1&pid=' + j + '"><img src="img/' + j + '.jpg" /></a><div class="Box title animated"></div></figure>';
+		}
+		$(".my-simple-gallery").append(ge);
+		$('figure').eq(0).find('img').addClass('gaoliang delay1').after('<img src="images/1.png" class="jingzi lightFlash">');
+		$('figure').eq(0).find('.Box').remove();
+		$('figure').eq(6).find('img').addClass('gaoliang delay2').after('<img src="images/6.png" class="jingzi lightFlash">');
+		$('figure').eq(6).find('.Box').remove();
+		$('figure').eq(11).find('img').addClass('gaoliang delay3').after('<img src="images/12.png" class="jingzi lightFlash">');
+		$('figure').eq(11).find('.Box').remove();
+		$('figure').eq(17).find('img').addClass('gaoliang delay5').after('<img src="images/19.png" class="jingzi lightFlash">');
+		$('figure').eq(17).find('.Box').remove();
+		$('figure').eq(22).find('img').addClass('gaoliang delay6').after('<img src="images/21.png" class="jingzi lightFlash">');
+		$('figure').eq(22).find('.Box').remove();
+		$(".Box").click(function(){
+			var url = $(this).siblings(".imgurl").attr("href");
+			window.location.href = url;
+		});
+	},
+	200);
+	
+})
+</script>
+</html>

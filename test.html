@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>background_fix</title>
+	<style type="text/css">
+		body {
+			font-family: 'Microsoft YaHei';
+			font-size: 12px;
+			margin: 0;
+			padding-top: 35px;
+			background: url(skin/images/bg.jpg) repeat-x fixed left top;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			font-size: 12px;
+			line-height: 2.5;
+			background: #eee;
+			border-bottom: 1px solid #333;
+		}
+		li a {
+			font-size: 1.6em;
+			text-decoration: none;
+			color: #666;
+		}
+		.container {
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.header {
+			font-size: 16px;
+			width: 100%;
+			background: url(skin/images/bg.jpg) repeat-x transparent;
+			line-height: 35px;
+			color: #fff;
+			position: fixed;
+			top: 0;
+			left: auto;
+		}
+	</style>
+	<script type="text/javascript" src="skin/js/jquery-1.11.1.min.js"></script>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$(window).scroll(function(){
+				console.log('scrollTop:'+$('body').scrollTop());
+				//$('body').css({'background-attachment':'fixed', 'background-position-y':0});
+			});
+			
+			$('.header').width($('.container').width());
+			
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">Title</div>
+		<ul>
+			<li><a href="javascript:void(0);">content001</a></li>
+			<li><a href="javascript:void(0);">content002</a></li>
+			<li><a href="javascript:void(0);">content003</a></li>
+			<li><a href="javascript:void(0);">content004</a></li>
+			<li><a href="javascript:void(0);">content005</a></li>
+			<li><a href="javascript:void(0);">content006</a></li>
+			<li><a href="javascript:void(0);">content007</a></li>
+			<li><a href="javascript:void(0);">content008</a></li>
+			<li><a href="javascript:void(0);">content009</a></li>
+			<li><a href="javascript:void(0);">content010</a></li>
+			<li><a href="javascript:void(0);">content011</a></li>
+			<li><a href="javascript:void(0);">content012</a></li>
+			<li><a href="javascript:void(0);">content013</a></li>
+			<li><a href="javascript:void(0);">content014</a></li>
+			<li><a href="javascript:void(0);">content015</a></li>
+			<li><a href="javascript:void(0);">content016</a></li>
+			<li><a href="javascript:void(0);">content017</a></li>
+			<li><a href="javascript:void(0);">content018</a></li>
+			<li><a href="javascript:void(0);">content019</a></li>
+			<li><a href="javascript:void(0);">content020</a></li>
+			<li><a href="javascript:void(0);">content021</a></li>
+			<li><a href="javascript:void(0);">content022</a></li>
+			<li><a href="javascript:void(0);">content023</a></li>
+			<li><a href="javascript:void(0);">content024</a></li>
+			<li><a href="javascript:void(0);">content025</a></li>
+			<li><a href="javascript:void(0);">content026</a></li>
+			<li><a href="javascript:void(0);">content027</a></li>
+			<li><a href="javascript:void(0);">content028</a></li>
+			<li><a href="javascript:void(0);">content029</a></li>
+			<li><a href="javascript:void(0);">content030</a></li>
+			<li><a href="javascript:void(0);">content031</a></li>
+			<li><a href="javascript:void(0);">content032</a></li>
+			<li><a href="javascript:void(0);">content033</a></li>
+			<li><a href="javascript:void(0);">content034</a></li>
+			<li><a href="javascript:void(0);">content035</a></li>
+			<li><a href="javascript:void(0);">content036</a></li>
+			<li><a href="javascript:void(0);">content037</a></li>
+			<li><a href="javascript:void(0);">content038</a></li>
+			<li><a href="javascript:void(0);">content039</a></li>
+			<li><a href="javascript:void(0);">content040</a></li>
+			<li><a href="javascript:void(0);">content041</a></li>
+			<li><a href="javascript:void(0);">content042</a></li>
+			<li><a href="javascript:void(0);">content043</a></li>
+			<li><a href="javascript:void(0);">content044</a></li>
+			<li><a href="javascript:void(0);">content045</a></li>
+			<li><a href="javascript:void(0);">content046</a></li>
+			<li><a href="javascript:void(0);">content047</a></li>
+			<li><a href="javascript:void(0);">content048</a></li>
+			<li><a href="javascript:void(0);">content049</a></li>
+			<li><a href="javascript:void(0);">content050</a></li>
+		</ul>
+	</div>
+</body>
+</html>

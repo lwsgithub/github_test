@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dislog</title>
+<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="dialog/dialog.js" id="dialog_js"></script>
+<style type="text/css">
+	.button {
+		width: 20%;
+		height: 2em;
+		line-height: 1.9em;
+		font-weight: bold;
+		letter-spacing: 0.5em;
+		text-align: center;
+		background: #f0f080;
+		color: #fff;
+		border-top: 1px solid #fefefe;
+		border-right: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #fefefe;
+		border-radius: 1em;
+		cursor: pointer;
+	}
+</style>
+
+</head>
+<body>
+	<div class="button" id="btn">点击</div>
+<script type="text/javascript">
+	
+		console.log(Dialog);
+		var Dialog_object = new Dialog('btn');
+		cnsole.log(Dialog_object);
+		$('#btn').click(function(){
+			cnsole.log(Dialog_object);
+			console.log(Dialog_object.init());
+			console.log(Dialog_object.show());
+		});
+	
+</script>
+</body>
+</html>

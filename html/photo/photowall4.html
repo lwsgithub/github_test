@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no">
+	<link rel="stylesheet" href="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/photoswipe.css">
+	<title>相册</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+		a:focus, a:active {
+			background-color: transparent;
+		}
+		.product-detail {
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+		}
+		.imgshows {
+			overflow: hidden;
+		}
+		.imgshows img {
+			float: left;
+		}
+		.product-detail .abtn-wrapper {
+			width: 100%;
+			height: 5em;
+			line-height: 5;
+			text-align: center;
+			position: absolute;
+			z-index: 2;
+			bottom: 22.07em;
+			left: 0;
+		}
+		.product-detail .abtn-wrapper .abtn {
+			padding: 1.15em 8em;
+		}
+	</style>
+</head>
+<body>
+<script src="./美女相册里的秘密，只许看不许瞎想(•̀ᴗ•́)و ̑̑_files/jquery-1.10.2.min.js"></script>
+<script>
+$(function(){
+	var pid = getUrlParam("pid");
+	var h5;
+	switch(pid){
+		case '1':
+			h5 = 'H5-3';
+			break;
+		case '7':
+			h5 = 'H5-2';
+			break;
+		case '12':
+			h5 = 'H5-1';
+			break;
+		case '18':
+			h5 = 'H5-4';
+			break;
+		case '23':
+			h5 = 'H5-4';
+			break;
+	}
+	
+	$("#imgshows img").each(function(i, o){
+		$(o).attr('src',"img/h4/"+h5+'-'+(i+1)+".jpg");
+	});
+});
+function getUrlParam(name){  
+    //构造一个含有目标参数的正则表达式对象  
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+    //匹配目标参数  
+    var r = window.location.search.substr(1).match(reg);  
+    //返回参数值  
+    if (r!=null) return unescape(r[2]);  
+    return null;  
+} 
+</script>
+<div class="product-detail">
+    <div id="imgshows" class="imgshows">
+        <img width="100%" src="" alt="" />
+        <img width="100%" src="" alt="" />
+        <img width="100%" src="" alt="" />
+        <img width="100%" src="" alt="" />
+    </div>
+    <div class="abtn-wrapper"><a href="javascript: void(0);" class="abtn">&nbsp;</a></div>
+    
+</div>
+</body>
+</html>

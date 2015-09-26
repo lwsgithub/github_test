@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		body, p {
+			margin: 0;
+		}
+		body {
+			font-size: 14px;
+		}
+		#container {
+			width: 75%;
+			height: 100vh;
+			margin: 0 auto;
+			padding: 1em;
+			
+		}
+		#container p {
+			width: 35%;
+			height: 5em;
+			line-height: 1.7;
+			text-align: justify;
+			border: 1px solid #333;
+			padding: 0 1em;
+			margin-bottom: 1em;
+			overflow: hidden;
+			-moz-transition: all 5.5s ease 0s;
+		}
+		#container p.lxj {
+			width: 249px;
+			height: 249px;
+			margin-top: 5em;
+			border: 0;
+			overflow: visible;
+			-moz-transition: all 5.5s ease 0s;
+		}
+		#container p.lxj img {
+			margin-top: -1.1em;
+			margin-left: 0.1em;
+		}
+		#container:hover p.lxj {
+			-moz-transform:rotate(3600deg);
+		}
+	</style>
+	<script type="text/javascript" src="../skin/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			var FirstP  = $("#container p").first();
+			var PFontSize = parseInt(FirstP.css('font-size'));
+			var PLineHeight = parseFloat(FirstP.css('line-height'))/PFontSize;console.log('行高：'+PLineHeight);
+			console.log(Math.round(FirstP.width()/PFontSize)+"\n\r"+Math.round(FirstP.height()/(PFontSize*PLineHeight)));
+			var SecondP = $("#container p").eq(1);
+			var LastChar = Math.round((FirstP.width()/PFontSize) * (FirstP.height()/(PFontSize*PLineHeight)));console.log(FirstP.text().substr(LastChar+2));
+			SecondP.text(FirstP.text().substr(LastChar+2));console.log(parseInt(FirstP.css('font-size')));
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<p>专用无人机基地，这在中国算是个比较新的事物。有接近空军的消息源透露，解放军早在2011年前后就已经建成了多个基地，专门用于放飞用退役老式歼击机改装的无人机，这些基地颇有规模，每个可容纳数十架无人机，且基地本身和无人机是作为一个系统设计的，在地勤人员将飞机置于热机状态后，这些无人机可在自动化系统控制下，自主完成从停机坪滑上跑道陆续起飞的动作。</p>
+		<p></p>
+		<p class="lxj"><img src="../skin/images/lxj.jpg" alt="" id="lxj" /></p>
+	</div>
+</body>
+</html>

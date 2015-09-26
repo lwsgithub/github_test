@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>media-test</title>
+	<style type="text/css">
+		.container {
+			width: 150px;
+			height: 90px;
+		}
+		@media (min-width: 1680px) and (max-width: 1680px) {
+			.container {
+				background: #00f;
+			}
+		}
+		@media (min-width: 1920px) and (max-width: 1920px) {
+			.container {
+				background: #f00;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+</html>

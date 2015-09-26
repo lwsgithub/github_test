@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>test</title>
+	<style type="text/css">
+		.xq {
+			width: 1em;
+			height: 1em;
+			border-radius: 3em;
+			background-color: #008000;
+		}
+		@-webkit-keyframes xqAnimate {
+			0% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				-webkit-transform: translate(0, 0);
+				-ms-transform: translate(0, 0);
+				transform: translate(0, 0)
+			}
+			25% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(25px, -25px);
+				-ms-transform: translate(25px, -25px);
+				transform: translate(25px, -25px)
+			}
+			50% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(50px, 0px);
+				-ms-transform: translate(50px, 0px);
+				transform: translate(50px, 0px)
+			}
+			100% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(100px, 100px);
+				-ms-transform: translate(100px, 100px);
+				transform: translate(100px, 100px)
+			}
+		}
+		@keyframes xqAnimate {
+			0% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				-webkit-transform: translate(0, 0);
+				-ms-transform: translate(0, 0);
+				transform: translate(0, 0)
+			}
+			25% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(25px, -25px);
+				-ms-transform: translate(25px, -25px);
+				transform: translate(25px, -25px)
+			}
+			50% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(50px, 0px);
+				-ms-transform: translate(50px, 0px);
+				transform: translate(50px, 0px)
+			}
+			100% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate(100px, 100px);
+				-ms-transform: translate(100px, 100px);
+				transform: translate(100px, 100px)
+			}
+		}
+		.xqAnimate {
+			-webkit-animation-name: xqAnimate;
+			animation-name: xqAnimate;
+			/*-webkit-transform-origin: center bottom;
+			-ms-transform-origin: center bottom;
+			transform-origin: center bottom*/
+		}
+	</style>
+</head>
+<body>
+	<div class="xq xqAnimate"></div>
+</body>
+</html>
